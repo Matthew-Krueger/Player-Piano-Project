@@ -1,12 +1,18 @@
 <?php
+$p = getenv('app_root_path');
+die ($p);
 session_start();
 ##require_once '/pass.php';
+
+#require the config array
 require_once '/var/www/html/func/config.php';
 
+# Set Autoload of files
 spl_autoload_register(function($class){
 	require_once '/var/www/html/func/classes/' . $class . '.php';
 });
 
+#Require Sanitation file
 require_once '/var/www/html/func/san.php';
 
 
