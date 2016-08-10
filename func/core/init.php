@@ -1,10 +1,10 @@
 <?php
 session_start();
 ##require_once '/pass.php';
-require_once '/var/www/func/config.php';
+require_once '/var/www/html/func/config.php';
 
 spl_autoload_register(function($class){
-	require_once '/var/www/func/classes/' . $class . '.php';
+	require_once '/var/www/html/func/classes/' . $class . '.php';
 });
 
 require_once '/var/www/html/func/san.php';
