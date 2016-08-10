@@ -1,5 +1,5 @@
 <?php
-$p = getenv('app_root_path');
+$p = getenv('APP_ROOT_PATH');
 die ($p);
 session_start();
 ##require_once '/pass.php';
