@@ -1,6 +1,6 @@
 <?php
 $p = getenv('APP_ROOT_PATH');
-die ($p);
+die ("Hi" . $p);
 session_start();
 ##require_once '/pass.php';
 
