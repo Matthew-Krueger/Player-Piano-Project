@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '/pass.php';
+##require_once '/pass.php';
 require_once '/var/www/func/config.php';
 
 spl_autoload_register(function($class){
