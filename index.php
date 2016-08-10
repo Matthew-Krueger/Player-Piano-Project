@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <?php
+    error_reporting(-1);
     require_once("/var/www/html/func/core/init.php");
   ?>
 	<meta charset="utf-8">
