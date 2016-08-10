@@ -1,19 +1,18 @@
 <?php
 $p = getenv('DOCUMENT_ROOT');
-die ("Hi" . $p);
 session_start();
 ##require_once '/pass.php';
 
 #require the config array
-require_once '/var/www/html/func/config.php';
+require_once $p . '/func/config.php';
 
 # Set Autoload of files
 spl_autoload_register(function($class){
-	require_once '/var/www/html/func/classes/' . $class . '.php';
+	require_once $p . '/html/func/classes/' . $class . '.php';
 });
 
 #Require Sanitation file
-require_once '/var/www/html/func/san.php';
+require_once Config::Get('root') . '/html/func/san.php';
 
 
 if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))){
