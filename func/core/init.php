@@ -7,7 +7,7 @@ spl_autoload_register(function($class){
 	require_once '/var/www/func/classes/' . $class . '.php';
 });
 
-require_once '/var/www/func/san.php';
+require_once '/var/www/html/func/san.php';
 
 
 if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))){
