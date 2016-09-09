@@ -46,7 +46,7 @@ class Validate{
 							# echo "<pre>", count(array($item, '=', $value)), "</pre>";
 							$check = $this->_db->get($rule_value, array($item, '=', $value));
 							if ($check->count()) {
-								$this->addError($items[$item]['name'] . " already exists. Please try another " . $items[$item]['name'] . ".");
+								$this->addError("The " . $items[$item]['name'] . " " . Chars::escape($value); . " already exists. Please try another " . $items[$item]['name'] . ".");
 							}
 							break;
 						case 'alnum':
@@ -59,7 +59,16 @@ class Validate{
 								$this->addError($items[$item]["name"] . " needs to be a valid email. Example: joe@example.com");
 							}
 							break;
+						case 'file':
+							$normalizedURL = Chars::urlEncode($value);
+							if($normalizedURL != $value){
+								$this->addError("The file name &quot;" . Chars::escape($value) . "&quot; is not allowed.");
+							} if(file_exists(Config::get('root') . $normalizedURL)){
+								$this->addError("The file name &quot;" . Chars::escape($value) . "&quot; already exists.");
+							}
+							break;
 						default:
+							$this->addError("Error set is not defined for " $items[$item]["name"]);
 							# code...
 							break;
 					}

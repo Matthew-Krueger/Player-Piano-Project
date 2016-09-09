@@ -7,10 +7,10 @@ class Redirect{
 				switch ($location) {
 					case 404:
 						header("HTTP/1.0 404 Not Found");
-						require '/home/matthapkidokarate/wwws/func/includes/errors/404user.php';
+						require Config::Get('root') . 'func/includes/errors/404user.php';
 						exit();
 						break;
-					
+
 					default:
 						# code...
 						break;

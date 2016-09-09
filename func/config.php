@@ -1,5 +1,6 @@
 <?php
 $GLOBALS['config'] = array(
+	'root'		=> getenv('DOCUMENT_ROOT'),
 	'mysql'		=> array(
 				'host'		=> 'localhost',
 				'username'	=> 'root',
